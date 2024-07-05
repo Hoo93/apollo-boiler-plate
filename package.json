@@ -1,0 +1,22 @@
+{
+  "name": "apollo-boiler-plate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Hoo93/apollo-boiler-plate.git",
+  "author": "hoo93 <sksk8922@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:dev": "ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
