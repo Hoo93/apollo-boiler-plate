@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgresql:
+    image: bitnami/postgresql:14-debian-11
+    restart: always
+    container_name: docker-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRESQL_INIT_MAX_TIMEOUT=90
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=postgres
+      - POSTGRESQL_DATABASE=vetching
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
