@@ -10,6 +10,7 @@ export class App {
   constructor() {
     this.app = express();
     this.setMiddlewares();
+    this.setHealthChecker();
     // this.setErrorHandler();
     this.setNotFoundHandler();
   }
@@ -17,6 +18,15 @@ export class App {
   private setMiddlewares(): void {
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({ extended: true }));
+  }
+
+  private setHealthChecker(): void {
+    this.app.get("/health-check", (req, res) => {
+      res.status(200).json({
+        success: true,
+        data: "Server Is Running",
+      });
+    });
   }
 
   // private setErrorHandler(): void {
